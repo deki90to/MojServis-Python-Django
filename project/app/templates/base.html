@@ -6,14 +6,24 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+    	
+    	body {
+    		background-color: white;
+    		font-size: 20px;
+    		color: black;
+    		text-align: left;
+    	}
+
+    </style>
  </head>
 
 <body>
 
-	<nav class="navbar bg-primary">
-		<a href="" class="btn btn-light btn-sm"> Pocetna </a>
-		<a href="{% url 'new' %}" class="btn btn-light"> Novi Servis </a>
-		<a href="" class="btn btn-light btn-sm"> Odjavi se </a>
+	<nav class="navbar bg-dark">
+		<a href="{% url 'index' %}" class="btn btn-success btn-sm"> Pocetna Strana </a>
+		<a href="{% url 'new' %}" class="btn btn-success"> Novi Servis </a>
+		<a href="" class="btn btn-danger btn-sm"> Odjavi se </a>
 	</nav>
 
 	<br>

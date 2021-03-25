@@ -4,7 +4,9 @@
 {% block content %}
   {% for ms in mali_servis %}
   <ul><b>
-  	{{ ms.ms_automobila }}<br>
+  	{{ ms.ms_automobila }} 
+    (<a href="{% url 'update' ms.pk %}">Izmeni</a> /
+    <a href="{% url 'delete' ms.pk %}">Obrisi</a>)<br>
   	{{ ms.tablica }}<br>
   	{{ ms.kilometraza }} km</b><br>
   	<br>
@@ -36,7 +38,12 @@
   	{% else %}
   		Filter kabine: <b>Ne</b>
   	{% endif %}
-  	</li><br>
+  	</li>
+    {% if ms.info %}
+    <br>
+      ({{ ms.info }})
+    {% endif %}
+    <br><br>
   	<b>{{ ms.date.date }}</b>
   	<hr>
   </ul>
