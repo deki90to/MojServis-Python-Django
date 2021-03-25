@@ -38,3 +38,5 @@ def delete(request, pk):
 	if request.method == 'POST':
 		mali_servis.delete()
 		return redirect('index')
+
+	return render(request, 'delete.html', {'mali_servis':mali_servis})

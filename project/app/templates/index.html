@@ -5,8 +5,7 @@
   {% for ms in mali_servis %}
   <ul><b>
   	{{ ms.ms_automobila }} 
-    (<a href="{% url 'update' ms.pk %}">Izmeni</a> /
-    <a href="{% url 'delete' ms.pk %}">Obrisi</a>)<br>
+    (<a href="{% url 'update' ms.pk %}">Izmeni</a> | <a href="{% url 'delete' ms.pk %}">Obrisi</a>)<br>
   	{{ ms.tablica }}<br>
   	{{ ms.kilometraza }} km</b><br>
   	<br>
@@ -41,9 +40,10 @@
   	</li>
     {% if ms.info %}
     <br>
-      ({{ ms.info }})
+      <i>({{ ms.info }})</i>
+      <br>
     {% endif %}
-    <br><br>
+    <br>
   	<b>{{ ms.date.date }}</b>
   	<hr>
   </ul>

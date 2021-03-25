@@ -11,7 +11,7 @@ class Automobil(models.Model):
 
 class MaliServis(models.Model):
 	ms_automobila = models.ForeignKey('Automobil', on_delete=models.CASCADE)
-	tablica = models.CharField(max_length=10)
+	tablica = models.CharField(max_length=10, blank=True, null=True)
 	kilometraza = models.IntegerField()
 	ulje = models.CharField(max_length=30)
 	filter_ulja = models.BooleanField()
@@ -29,6 +29,7 @@ class MaliServis(models.Model):
 
 class VelikiServis(models.Model):
 	vs_automobila = models.ForeignKey('Automobil', on_delete=models.CASCADE)
+	tablica = models.CharField(max_length=10, blank=True, null=True)
 	kilometraza = models.IntegerField()
 	kais = models.BooleanField()
 	lanac = models.BooleanField()
