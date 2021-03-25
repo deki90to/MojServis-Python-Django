@@ -10,13 +10,14 @@
 
 <body>
 
-  <nav class="navbar bg-primary">
-  	<a href="{% url 'new' %}" class="btn btn-light btn-sm"> Novi Servis</a>
-    <a href="" class="btn btn-light btn-sm"> Odjavi se </a>
-  </nav>
+	<nav class="navbar bg-primary">
+		<a href="" class="btn btn-light btn-sm"> Pocetna </a>
+		<a href="{% url 'new' %}" class="btn btn-light"> Novi Servis </a>
+		<a href="" class="btn btn-light btn-sm"> Odjavi se </a>
+	</nav>
 
-<br>
- {% block content%}
+	<br>
+ {% block content %}
     body problem
  {% endblock %}
 </body>
