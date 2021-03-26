@@ -6,7 +6,7 @@
   {% for ms in mali_servis %}
     <ul><b>
         <h6>
-            <a href="{% url 'update' ms.pk %}" class="btn btn-primary btn-sm"> Izmeni </a> 
+            <a href="{% url 'update' ms.pk %}" class="btn btn-success btn-sm"> Izmeni </a> 
             <a href="{% url 'delete' ms.pk %}" class="btn btn-danger btn-sm"> Obrisi </a>
         </h6>
     	{{ ms.ms_automobila }} 
