@@ -4,14 +4,14 @@
 
 {% block content %}
 <center>
-<br><br><br>
+<br>
 <h1> Registruj se </h1>
 <br>
 <div class="form-group">
 	<form method="POST">
 		{% csrf_token %}
 		{{ form.as_p }}
-		<button class="btn btn-primary"> Potvrdi Registraciju </button>
+		<button class="btn btn-success btn-lg"> Potvrdi Registraciju </button>
 	</form>
 </div>
 </center>
