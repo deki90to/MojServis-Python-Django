@@ -5,7 +5,10 @@
 <div class="container">
   {% for ms in mali_servis %}
     <ul><b>
-        <h6><a href="{% url 'update' ms.pk %}" class="btn btn-outline-primary btn-sm"> Izmeni </a> <a href="{% url 'delete' ms.pk %}" class="btn btn-outline-danger btn-sm"> Obrisi </a></h6>
+        <h6>
+            <a href="{% url 'update' ms.pk %}" class="btn btn-primary btn-sm"> Izmeni </a> 
+            <a href="{% url 'delete' ms.pk %}" class="btn btn-danger btn-sm"> Obrisi </a>
+        </h6>
     	{{ ms.ms_automobila }} 
             <br>
     	{{ ms.tablica }}<br>
@@ -46,7 +49,7 @@
         <br>
       {% endif %}
       <br>
-    	{{ ms.date.date }}
+    	<b>{{ ms.date.date }}</b>
     	<hr>
     </ul>
   {% endfor %}

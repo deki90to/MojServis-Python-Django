@@ -28,22 +28,3 @@ class MaliServis(models.Model):
 
 	class Meta:
 		ordering = ['-date']
-
-# class VelikiServis(models.Model):
-# 	vs_automobila = models.ForeignKey('Automobil', on_delete=models.CASCADE)
-# 	tablica = models.CharField(max_length=10, blank=True, null=True)
-# 	kilometraza = models.IntegerField()
-# 	kais = models.BooleanField()
-# 	lanac = models.BooleanField()
-# 	zatezac = models.BooleanField()
-# 	roler = models.BooleanField()
-# 	spaner = models.BooleanField()
-# 	pumpa_vode = models.BooleanField()
-# 	info = models.TextField(max_length=500, blank=True, null=True)
-# 	date = models.DateTimeField(default=datetime.now, null=True)
-
-# 	def __str__(self):
-# 		return f' {self.vs_automobila}, {self.kilometraza}, {self.info}'
-
-# 	class Meta:
-# 		ordering = ['-date']

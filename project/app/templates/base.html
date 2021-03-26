@@ -27,15 +27,13 @@
 
     {% else %}
 
-        <nav class="navbar bg-dark">
-        	<a href="{% url 'index' %}" class="btn btn-success btn-sm"> Pocetna Strana </a>
-        	<a href="{% url 'new' %}" class="btn btn-success"> Novi Servis </a>
-        	<a href="{% url 'logout' %}" class="btn btn-danger btn-sm"> Odjavi se </a>
+        <nav class="navbar bg-success">
+        	<a href="{% url 'index' %}" class="btn btn-success btn-lg"> Pocetna Strana </a>
+        	<a href="{% url 'new' %}" class="btn btn-success btn-lg"> Novi Servis </a>
+        	<a href="{% url 'logout' %}" class="btn btn-success btn-lg"> Odjavi se </a>
         </nav>
 
      {% endif %}
-
-
 
      <body>
 
