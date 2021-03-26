@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-
+{% if user.is_authenticated %}
 {% block content %}
 
 	<div class="container">
@@ -18,3 +18,4 @@
     </script>
 
 {% endblock %}
+{% endif %}

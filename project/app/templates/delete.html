@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
+
+{% if user.is_authenticated %}
 {% block content %}
+
 	<form method="POST">
 		{% csrf_token %}
 		{{ form.as_p }}
@@ -10,4 +13,6 @@
 			<input type="submit" value="Obrisi" name="" class="btn btn-danger btn-lg">
 		</center>
 	</form>
+	
 {% endblock %}
+{% endif %}
