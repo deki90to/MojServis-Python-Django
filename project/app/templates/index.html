@@ -2,50 +2,53 @@
 
 
 {% block content %}
+<div class="container">
   {% for ms in mali_servis %}
-  <ul><b>
-  	{{ ms.ms_automobila }} 
-    (<a href="{% url 'update' ms.pk %}">Izmeni</a> | <a href="{% url 'delete' ms.pk %}">Obrisi</a>)<br>
-  	{{ ms.tablica }}<br>
-  	{{ ms.kilometraza }} km</b><br>
-  	<br>
-  	<li>Ulje: {{ ms.ulje }}</li>
-  	<li>
-  	{% if ms.filter_ulja %}
-  		Filter ulja: <b>Da</b>
-  	{% else %}
-  		Filter ulja: <b>Ne</b>
-  	{% endif %}
-  	</li>
-  	<li>
-  	{% if ms.filter_goriva %}
-  		Filter goriva: <b>Da</b>
-  	{% else %}
-  		Filter goriva: <b>Ne</b>
-  	{% endif %}
-  	</li>
-  	<li>
-  	{% if ms.filter_vazduha %}
-  		Filter vazduha: <b>Da</b>
-  	{% else %}
-  		Filter vazduha: <b>Ne</b>
-  	{% endif %}
-  	</li>
-  	<li>
-  	{% if ms.filter_kabine %}
-  		Filter kabine: <b>Da</b>
-  	{% else %}
-  		Filter kabine: <b>Ne</b>
-  	{% endif %}
-  	</li>
-    {% if ms.info %}
-    <br>
-      <i>({{ ms.info }})</i>
+    <ul><b>
+        <h6><a href="{% url 'update' ms.pk %}" class="btn btn-outline-primary btn-sm"> Izmeni </a> <a href="{% url 'delete' ms.pk %}" class="btn btn-outline-danger btn-sm"> Obrisi </a></h6>
+    	{{ ms.ms_automobila }} 
+            <br>
+    	{{ ms.tablica }}<br>
+    	{{ ms.kilometraza }} km</b><br>
+    	<br>
+    	<li>Ulje: {{ ms.ulje }}</li>
+    	<li>
+    	{% if ms.filter_ulja %}
+    		Filter ulja: <b>Da</b>
+    	{% else %}
+    		Filter ulja: <b>Ne</b>
+    	{% endif %}
+    	</li>
+    	<li>
+    	{% if ms.filter_goriva %}
+    		Filter goriva: <b>Da</b>
+    	{% else %}
+    		Filter goriva: <b>Ne</b>
+    	{% endif %}
+    	</li>
+    	<li>
+    	{% if ms.filter_vazduha %}
+    		Filter vazduha: <b>Da</b>
+    	{% else %}
+    		Filter vazduha: <b>Ne</b>
+    	{% endif %}
+    	</li>
+    	<li>
+    	{% if ms.filter_kabine %}
+    		Filter kabine: <b>Da</b>
+    	{% else %}
+    		Filter kabine: <b>Ne</b>
+    	{% endif %}
+    	</li>
+      {% if ms.info %}
       <br>
-    {% endif %}
-    <br>
-  	<b>{{ ms.date.date }}</b>
-  	<hr>
-  </ul>
+        <b>- {{ ms.info }} </b>
+        <br>
+      {% endif %}
+      <br>
+    	{{ ms.date.date }}
+    	<hr>
+    </ul>
   {% endfor %}
+  </div>
 {% endblock %}

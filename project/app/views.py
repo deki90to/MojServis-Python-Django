@@ -40,3 +40,5 @@ def delete(request, pk):
 		return redirect('index')
 
 	return render(request, 'delete.html', {'mali_servis':mali_servis})
+
+

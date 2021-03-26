@@ -2,6 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 from django_resized import ResizedImageField
 from datetime import datetime
+from django.contrib.auth.models import User
 
 class Automobil(models.Model):
 	marka = models.CharField(max_length=30)
@@ -10,6 +11,7 @@ class Automobil(models.Model):
 		return f'{self.marka}'
 
 class MaliServis(models.Model):
+	user = models.ForeignKey(User, on_delete=models.CASCADE)
 	ms_automobila = models.ForeignKey('Automobil', on_delete=models.CASCADE)
 	tablica = models.CharField(max_length=10, blank=True, null=True)
 	kilometraza = models.IntegerField()
@@ -18,30 +20,30 @@ class MaliServis(models.Model):
 	filter_goriva = models.BooleanField()
 	filter_vazduha = models.BooleanField()
 	filter_kabine = models.BooleanField()
-	info = models.TextField(max_length=500, blank=True, null=True)
+	info = models.TextField(max_length=1000, blank=True, null=True)
 	date = models.DateTimeField(default=datetime.now, null=True)
 
 	def __str__(self):
-		return f'{self.ms_automobila}, {self.tablica}, {self.kilometraza}, {self.ulje}, {self.info}'
+		return f'{self.user}, {self.ms_automobila}, {self.tablica}, {self.kilometraza}, {self.ulje}, {self.info}'
 
 	class Meta:
 		ordering = ['-date']
 
-class VelikiServis(models.Model):
-	vs_automobila = models.ForeignKey('Automobil', on_delete=models.CASCADE)
-	tablica = models.CharField(max_length=10, blank=True, null=True)
-	kilometraza = models.IntegerField()
-	kais = models.BooleanField()
-	lanac = models.BooleanField()
-	zatezac = models.BooleanField()
-	roler = models.BooleanField()
-	spaner = models.BooleanField()
-	pumpa_vode = models.BooleanField()
-	info = models.TextField(max_length=500, blank=True, null=True)
-	date = models.DateTimeField(default=datetime.now, null=True)
+# class VelikiServis(models.Model):
+# 	vs_automobila = models.ForeignKey('Automobil', on_delete=models.CASCADE)
+# 	tablica = models.CharField(max_length=10, blank=True, null=True)
+# 	kilometraza = models.IntegerField()
+# 	kais = models.BooleanField()
+# 	lanac = models.BooleanField()
+# 	zatezac = models.BooleanField()
+# 	roler = models.BooleanField()
+# 	spaner = models.BooleanField()
+# 	pumpa_vode = models.BooleanField()
+# 	info = models.TextField(max_length=500, blank=True, null=True)
+# 	date = models.DateTimeField(default=datetime.now, null=True)
 
-	def __str__(self):
-		return f' {self.vs_automobila}, {self.kilometraza}, {self.info}'
+# 	def __str__(self):
+# 		return f' {self.vs_automobila}, {self.kilometraza}, {self.info}'
 
-	class Meta:
-		ordering = ['-date']
+# 	class Meta:
+# 		ordering = ['-date']

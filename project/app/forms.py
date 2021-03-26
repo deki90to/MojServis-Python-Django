@@ -5,6 +5,7 @@ class MaliServisForm(forms.ModelForm):
 	class Meta:
 		model = MaliServis
 		fields = (
+			'user',
 			'ms_automobila',
 			'tablica',
 			'kilometraza',
@@ -16,28 +17,33 @@ class MaliServisForm(forms.ModelForm):
 			'info')
 
 		labels = {
-			'ms_automobila':'',
+			'ms_automobila':'Brend Automobila',
 			'tablica':'',
 			'kilometraza':'',
 			'ulje':'',
-			# 'filter_ulja':'',
-			# 'filter_goriva':'',
-			# 'filter_vazduha':'',
-			# 'filter_kabine':'',
 			'info':''}			
 		
 		widgets = {
+			'user':forms.TextInput(attrs={'class': 'form-control', 'value':'', 'id':'admin', 'type':'hidden'}),
 			# 'ms_automobila':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Marka'}),
 			'tablica':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Tablica'}),
 			'kilometraza':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Kilometraza'}),
 			'ulje':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Ulje'}),
-			# 'filter_ulja':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Filter ulja'}),
-			# 'filter_goriva':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Filter goriva'}),
-			# 'filter_vazduha':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Filter vazduha'}),
-			# 'filter_kabine':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Filter kabine'}),
 			'info':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Vise informacija'}),
 		}
 
 
 
-
+# class VelikiServisForm(forms.ModelForm):
+# 	class Meta:
+# 		fields = (
+# 			'vs_automobila',
+# 			'tablica',
+# 			'kilometraza',
+# 			'kais',
+# 			'lanac',
+# 			'zatezac',
+# 			'roler',
+# 			'spaner',
+# 			'pumpa_vode',
+# 			'info')

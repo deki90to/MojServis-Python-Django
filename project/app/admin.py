@@ -3,4 +3,4 @@ from . models import *
 
 admin.site.register(Automobil)
 admin.site.register(MaliServis)
-admin.site.register(VelikiServis)
+# admin.site.register(VelikiServis)
