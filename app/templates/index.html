@@ -5,11 +5,9 @@
 
 <div class="container">
   {% for ms in mali_servis %}
+  {% if request.user == ms.user %}
     <ul><b>
-        <h6>
-            <a href="{% url 'update' ms.pk %}" class="btn btn-success btn-sm"> Izmeni </a> 
-            <a href="{% url 'delete' ms.pk %}" class="btn btn-danger btn-sm"> Obrisi </a>
-        </h6>
+
     	{{ ms.ms_automobila }} 
             <br>
     	{{ ms.tablica }}<br>
@@ -51,8 +49,16 @@
       {% endif %}
       <br>
     	<b>{{ ms.date.date }}</b>
+        <br><br>    
+        <h6>
+            <a href="{% url 'update' ms.pk %}" class="btn btn-success btn-sm"> Izmeni </a> 
+            <a href="{% url 'delete' ms.pk %}" class="btn btn-danger btn-sm"> Obrisi </a>
+        </h6>
     	<hr>
+
     </ul>
+
+    {% endif %}
   {% endfor %}
   </div>
 
