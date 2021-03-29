@@ -13,12 +13,27 @@
     		font-size: 20px;
     		color: black;
     		text-align: left;
-    	}
+        }
+
+        h1 {
+            font-size: 50px;
+            color: white;
+        }
 
     </style>
  </head>
 
     {% if not user.is_authenticated %}
+
+    <nav class="navbar bg-success">
+            <div>
+                <h1>
+                    <i>
+                        Moj Servis
+                    </i>
+                </h1>
+            </div>
+    </nav>
 
         <nav class="navbar bg-success">
             <a href="{% url 'register' %}" class="btn btn-success btn-lg"> Registruj se</a>

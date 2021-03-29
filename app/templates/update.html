@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
-{% if user.is_authenticated %}
 {% block content %}
+{% if user.is_authenticated %}
 
 	<div class="container">
 		<form method="POST">
@@ -12,5 +12,5 @@
 		</form>
 	</div>
 	
-{% endblock %}
 {% endif %}
+{% endblock %}

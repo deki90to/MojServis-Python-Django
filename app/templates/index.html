@@ -1,17 +1,18 @@
 {% extends 'base.html' %}
 
-{% if user.is_authenticated %}
 {% block content %}
+{% if user.is_authenticated %}
 
 <div class="container">
   {% for ms in mali_servis %}
   {% if request.user == ms.user %}
     <ul><b>
-
     	{{ ms.ms_automobila }} 
             <br>
     	{{ ms.tablica }}<br>
-    	{{ ms.kilometraza }} km</b><br>
+    	{{ ms.kilometraza }} km
+    </b><br>
+
     	<br>
     	<li>Ulje: {{ ms.ulje }}</li>
     	<li>
@@ -42,14 +43,19 @@
     		Filter kabine: <b>Ne</b>
     	{% endif %}
     	</li>
+
       {% if ms.info %}
+
       <br>
         <b>- {{ ms.info }} </b>
         <br>
+        
       {% endif %}
+
       <br>
     	<b>{{ ms.date.date }}</b>
-        <br><br>    
+
+        <br><br>
         <h6>
             <a href="{% url 'update' ms.pk %}" class="btn btn-success btn-sm"> Izmeni </a> 
             <a href="{% url 'delete' ms.pk %}" class="btn btn-danger btn-sm"> Obrisi </a>
@@ -61,6 +67,6 @@
     {% endif %}
   {% endfor %}
   </div>
-
-{% endblock %}
+  
 {% endif %}
+{% endblock %}
