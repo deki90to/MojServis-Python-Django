@@ -3,14 +3,23 @@
 {% block content %}
 {% if user.is_authenticated %}
 
+
 	<div class="container">
 		<form method="POST">
 			{% csrf_token %}
 			{{ form.as_p }}
 			<br>
-			<input type="submit" value="Snimi" name="" class="btn btn-success btn-lg">
+			<h6 id="update"> Sacuvaj Izmene </h6>
+			<button class="btn btn-success" onclick="changeText()"> Sacuvaj </button>
 		</form>
 	</div>
+
+	<script>
+		function changeText(){
+			var update = document.getElementById('update');
+			update.innerHTML = 'Sacuvano!';
+		}
+	</script>
 	
 {% endif %}
 {% endblock %}
