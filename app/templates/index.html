@@ -53,12 +53,12 @@
       {% endif %}
 
       <br>
-    	<b>{{ ms.date.date }}</b>
+    	{{ ms.date.date }}
 
         <br><br>
         <h6>
-            <a href="{% url 'update' ms.pk %}" class="btn btn-success btn-sm"> Izmeni </a> 
-            <a href="{% url 'delete' ms.pk %}" class="btn btn-danger btn-sm"> Obrisi </a>
+            <a href="{% url 'update' ms.pk %}" class="btn btn-outline-success btn-sm"> Izmeni </a> 
+            <a href="{% url 'delete' ms.pk %}" class="btn btn-outline-danger btn-sm"> Obrisi </a>
         </h6>
     	<hr>
 

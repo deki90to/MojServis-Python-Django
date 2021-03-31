@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from . models import *
 from . forms import *
+from time import sleep
 
 
 def index(request):
@@ -28,6 +29,7 @@ def update(request, pk):
 		form = MaliServisForm(request.POST, instance=mali_servis)
 		if form.is_valid():
 			form.save()
+			sleep(1)
 			return redirect('index')
 
 	return render(request, 'update.html', {'mali_servis':mali_servis, 'form':form})
@@ -37,6 +39,7 @@ def delete(request, pk):
 
 	if request.method == 'POST':
 		mali_servis.delete()
+		sleep(1)
 		return redirect('index')
 
 	return render(request, 'delete.html', {'mali_servis':mali_servis})
