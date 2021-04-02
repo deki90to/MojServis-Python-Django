@@ -4,9 +4,10 @@
 {% if user.is_authenticated %}
 
 	<div class="container">
-		<form method="POST">
+		<form method="POST" enctype="multipart/form-data">
 			{% csrf_token %}
 			{{ form.as_p }}
+
 			<br>
 			<input type="submit" value="Snimi" name="" class="btn btn-success btn-lg">
 		</form>
@@ -16,6 +17,14 @@
         var name = '{{ user.id }}';
         document.getElementById('admin').value = name;
     </script>
+
+	<div class="container">
+		<form action="" method="POST">
+			{% csrf_token %}
+
+			<input type="file" multiple required name="slike" class="form-control-file">
+		</form>
+	</div>
 
 {% endif %}
 {% endblock %}

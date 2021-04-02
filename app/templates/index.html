@@ -7,8 +7,8 @@
   {% for ms in mali_servis %}
   {% if request.user == ms.user %}
     <ul><b>
-    	{{ ms.ms_automobila }} 
-            <br>
+		<img src="{{ ms.slike.url }}"> <br>
+    	{{ ms.ms_automobila }} <br>
     	{{ ms.tablica }}<br>
     	{{ ms.kilometraza }} km
     </b><br>

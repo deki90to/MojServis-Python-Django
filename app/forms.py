@@ -14,14 +14,17 @@ class MaliServisForm(forms.ModelForm):
 			'filter_goriva',
 			'filter_vazduha',
 			'filter_kabine',
-			'info')
+			'info',
+			'slike',
+			)
 
 		labels = {
 			'ms_automobila':'Brend Automobila',
 			'tablica':'',
 			'kilometraza':'',
 			'ulje':'',
-			'info':''}			
+			'info':''
+			}			
 		
 		widgets = {
 			'user':forms.TextInput(attrs={'class': 'form-control', 'value':'', 'id':'admin', 'type':'hidden'}),
