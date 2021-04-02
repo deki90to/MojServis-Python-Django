@@ -9,7 +9,7 @@
 			{{ form.as_p }}
 
 			<br>
-			<input type="submit" value="Snimi" name="" class="btn btn-success btn-lg">
+			<input type="submit" value="Sacuvaj" name="" class="btn btn-success btn-lg">
 		</form>
 	</div>
 
@@ -17,14 +17,14 @@
         var name = '{{ user.id }}';
         document.getElementById('admin').value = name;
     </script>
-
+<!-- 
 	<div class="container">
 		<form action="" method="POST">
 			{% csrf_token %}
 
 			<input type="file" multiple required name="slike" class="form-control-file">
 		</form>
-	</div>
+	</div> -->
 
 {% endif %}
 {% endblock %}

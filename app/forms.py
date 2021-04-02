@@ -7,6 +7,7 @@ class MaliServisForm(forms.ModelForm):
 		fields = (
 			'user',
 			'ms_automobila',
+			'model',
 			'tablica',
 			'kilometraza',
 			'ulje',
@@ -19,7 +20,8 @@ class MaliServisForm(forms.ModelForm):
 			)
 
 		labels = {
-			'ms_automobila':'Brend Automobila',
+			'ms_automobila':'Brend',
+			'model':'',
 			'tablica':'',
 			'kilometraza':'',
 			'ulje':'',
@@ -32,4 +34,5 @@ class MaliServisForm(forms.ModelForm):
 			'kilometraza':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Kilometraza'}),
 			'ulje':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Ulje'}),
 			'info':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Vise informacija'}),
+			'model':forms.TextInput(attrs={'class':'form-control', 'placeholder':'Model'}),
 		}
