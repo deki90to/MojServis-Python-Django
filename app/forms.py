@@ -16,7 +16,6 @@ class MaliServisForm(forms.ModelForm):
 			'filter_vazduha',
 			'filter_kabine',
 			'info',
-			'slike',
 			)
 
 		labels = {

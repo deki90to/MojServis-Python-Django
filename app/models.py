@@ -23,7 +23,7 @@ class MaliServis(models.Model):
 	filter_kabine = models.BooleanField()
 	info = models.TextField(max_length=1000, blank=True, null=True)
 	date = models.DateTimeField(default=datetime.now, null=True)
-	slike = ResizedImageField(size=[320,240], quality=100, upload_to='pictures', null=True, blank=True)
+
 
 	def __str__(self):
 		return f'{self.user}, {self.ms_automobila}, {self.model}, {self.tablica}, {self.kilometraza}, {self.ulje}, {self.info}'
